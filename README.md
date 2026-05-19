@@ -6,23 +6,11 @@
 
 ## 🌟 Key Features
 
-- **🔒 Credential-Validated Authentication**
-  - Accepts specific mock accounts (`shivam@hintro.ai` and `kshitij.saxena@hintro.ai`).
-  - Distinct UI environments load depending on the active user.
-- **📊 KPI Metrics Dashboard**
-  - **Total Sessions**: Dynamic counter displaying complete session telemetry.
-  - **Average Duration**: Computes and neatly formats seconds into `h`, `m`, and `sec` strings.
-  - **AI Used**: Accurate counting of AI assistance triggers.
-  - **Last Session**: Computes real-time relative statements (e.g., _Active today_, _1 day ago_).
-- **🗃️ Chronological Call History**
-  - Session rows sorted and dynamically grouped under ordinal headers (e.g., _May 19th_, _May 18th_).
-  - Clean UI with simulated participant avatar stacks.
-- **💬 Feedback Submission & Detailed History Log**
-  - Feedback modal allowing rating selection and text comments.
-  - Dedicated **Feedback History** page with a tabular layout tracking prior submissions.
-- **📱 Fully Responsive Layout**
-  - Mobile sidebar drawer and persistent desktop sidebar.
-  - Global CSS variables for consistent theming.
+- **🔒 Mock Authentication**: Supports credential-validated user logins (`shivam@hintro.ai` & `kshitij.saxena@hintro.ai`).
+- **📊 KPI Dashboard**: Displays metrics for total sessions, formatted average duration, AI usage, and last activity.
+- **🗃️ Call History**: Lists call logs chronologically grouped by date with user avatar stacks.
+- **💬 Feedback System**: Interactive feedback modal and a dedicated Feedback History review table.
+- **📱 Responsive Layout**: Fully responsive mobile drawer and persistent desktop sidebar utilizing global CSS variables.
 
 ---
 
@@ -102,21 +90,28 @@ To make evaluation completely seamless, the login screen includes auto-fill cred
 ## 🛠️ Project Structure
 
 ```
-hintro/
-├── src/
-│   ├── components/
-│   │   ├── Sidebar.jsx           # Clean navigation for Desktop and Mobile drawer
-│   │   └── FeedbackModal.jsx     # Interactive rating & comment submission modal
-│   ├── context/
-│   │   └── AuthContext.jsx       # Single source of truth for auth & feedback state
-│   ├── pages/
-│   │   ├── Login.jsx             # Sleek login page with Auto-fill evaluation helpers
-│   │   ├── Dashboard.jsx         # Metric cards & chronological call logs
-│   │   └── FeedbackHistory.jsx   # Beautiful tabular feedback log
-│   ├── styles/                   # Modern CSS variables, glassmorphic styles & animations
-│   ├── utils/
-│   │   └── api.js                # Full simulated backend API client
-│   ├── App.jsx                   # Central routing & context wrappers
-│   └── main.jsx                  # React DOM entry point
-└── package.json
+Hintro_Assignment/
+├── hintro/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Sidebar.jsx
+│   │   │   └── FeedbackModal.jsx
+│   │   ├── context/
+│   │   │   └── AuthContext.jsx
+│   │   ├── pages/
+│   │   │   ├── Login.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   └── FeedbackHistory.jsx
+│   │   ├── styles/
+│   │   ├── utils/
+│   │   │   └── api.js
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   ├── index.html
+│   ├── vite.config.js
+│   └── package.json
+├── README.md
+├── package.json
+└── package-lock.json
 ```
