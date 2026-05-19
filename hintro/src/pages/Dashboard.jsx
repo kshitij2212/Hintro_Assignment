@@ -11,6 +11,7 @@ import {
   PieChart,
   Clock,
   Sparkles,
+  CalendarDays,
   Calendar,
   ChevronRight,
   Menu,
@@ -98,16 +99,16 @@ const Dashboard = () => {
     const secs = seconds % 60;
     
     if (hrs > 0) {
-      return `${hrs}h ${mins}m ${secs}sec`;
+      return `${hrs}h ${mins}m ${secs}s`;
     }
     if (mins > 0) {
-      return `${mins}m ${secs}sec`;
+      return `${mins}m ${secs}s`;
     }
-    return `${secs}sec`;
+    return `${secs}s`;
   };
 
   const formatRowDuration = (seconds) => {
-    if (!seconds || seconds <= 0) return '0sec';
+    if (!seconds || seconds <= 0) return '0s';
     const hrs = Math.floor(seconds / 3600);
     const mins = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60;
@@ -116,9 +117,9 @@ const Dashboard = () => {
       return `${hrs}h ${mins}m`;
     }
     if (mins > 0) {
-      return `${mins}m ${secs}sec`;
+      return `${mins}m ${secs}s`;
     }
-    return `${secs}sec`;
+    return `${secs}s`;
   };
 
   const formatRelativeTime = (datesArray) => {
@@ -206,12 +207,10 @@ const Dashboard = () => {
 
       <div className="main-content" style={{ minWidth: 0 }}>
         <header className="mobile-header">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <button onClick={() => setMobileSidebarOpen(true)} aria-label="Open sidebar">
-              <Menu size={24} />
-            </button>
-            <span className="sidebar-logo">Hintro</span>
-          </div>
+          <button onClick={() => setMobileSidebarOpen(true)} aria-label="Open sidebar" className="mobile-menu-btn">
+            <Menu size={24} />
+          </button>
+          <span className="mobile-header-title">Dashboard</span>
           <div
             className="top-bar-avatar"
             style={{ width: '28px', height: '28px', fontSize: '10px', cursor: 'pointer' }}
@@ -252,14 +251,15 @@ const Dashboard = () => {
         </div>
 
         <main className="dashboard-page animate-fade-in">
-          
-          <div className="welcome-banner-card">
+          <div className="dashboard-container">
+            <div className="welcome-banner-card">
             <div className="welcome-banner-text">
               <h2>Hi, {profile.firstName} 👋 Welcome to Hintro</h2>
               <p>Ready to make your next call smarter ?</p>
             </div>
             <button className="btn-start-call" onClick={handleStartCallSimulation}>
-              Start New Call
+              <span className="desktop-text">Start New Call</span>
+              <span className="mobile-text">Start Call</span>
             </button>
           </div>
 
@@ -301,7 +301,7 @@ const Dashboard = () => {
 
             <div className="figma-kpi-card">
               <div className="kpi-avatar-icon icon-purple-bg">
-                <Calendar size={20} />
+                <CalendarDays size={20} />
               </div>
               <div className="kpi-text-block">
                 <span className="kpi-text-label">Last Session</span>
@@ -377,7 +377,7 @@ const Dashboard = () => {
             </div>
           )}
 
-
+          </div>
 
         </main>
       </div>
