@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import {
-  Grid,
-  PhoneCall,
+  Phone,
   FileText,
-  MessageSquare,
+  MessageSquareMore,
   Sliders,
-  History,
   Gift,
   Info,
-  X
+  X,
+  LucideDownload,
+  PanelsTopLeftIcon,
+  LifeBuoy
 } from 'lucide-react';
 import FeedbackModal from './FeedbackModal';
 import '../styles/Sidebar.css';
@@ -24,13 +25,13 @@ const Sidebar = ({ isMobileOpen, setMobileOpen }) => {
   const topMenuItems = [
     {
       name: 'Dashboard',
-      icon: <Grid size={18} />,
+      icon: <PanelsTopLeftIcon size={18} />,
       path: '/dashboard',
       action: () => navigate('/dashboard')
     },
     {
       name: 'Call Insights',
-      icon: <PhoneCall size={18} />,
+      icon: <Phone size={18} />,
       path: '#insights',
       action: () => {}
     },
@@ -43,14 +44,14 @@ const Sidebar = ({ isMobileOpen, setMobileOpen }) => {
     },
     {
       name: 'Prompts',
-      icon: <MessageSquare size={18} />,
+      icon: <MessageSquareMore size={18} />,
       path: '#prompts',
       hasInfo: true,
       action: () => {}
     },
     {
       name: 'Boxy Controls',
-      icon: <Sliders size={18} />,
+      icon: <LifeBuoy size={18} />,
       path: '#controls',
       hasInfo: true,
       action: () => {}
@@ -60,7 +61,7 @@ const Sidebar = ({ isMobileOpen, setMobileOpen }) => {
   const bottomMenuItems = [
     {
       name: 'Feedback History',
-      icon: <History size={18} />,
+      icon: <LucideDownload size={18} />,
       path: '/feedback-history',
       action: () => navigate('/feedback-history')
     },

@@ -71,7 +71,7 @@ const getLocalMockData = (endpoint, userId = 'u1', params = {}) => {
     const totalSessions = Math.floor(Math.random() * 200) + 1;
     const averageDuration = Math.floor(Math.random() * 8000) + 1;
     const totalAIInteractions = Math.floor(Math.random() * 70) + 1;
-    
+
     switch (endpoint) {
       case 'profile':
         return {
@@ -85,7 +85,7 @@ const getLocalMockData = (endpoint, userId = 'u1', params = {}) => {
           createdAt: '2023-11-10T08:15:30Z',
           updatedAt: new Date().toISOString()
         };
-        
+
       case 'dashboard':
         return {
           user: {
@@ -110,7 +110,7 @@ const getLocalMockData = (endpoint, userId = 'u1', params = {}) => {
             notes: 24
           }
         };
-        
+
       case 'stats':
         return {
           totalSessions,
@@ -122,19 +122,19 @@ const getLocalMockData = (endpoint, userId = 'u1', params = {}) => {
             generateRandomDate(11, 20)
           ]
         };
-        
+
       case 'sessions': {
         const limit = params.limit || 10;
         const clients = ['Acme Corp', 'TechStart', 'BigCorp', 'StartupXYZ', 'Enterprise Inc', 'InnovateLLC', 'Apex Systems', 'SkyNet Global'];
-        const descriptions = ['Product demo', 'Sales discovery call', 'Onboarding session', 'Quarterly business review', 'Feature brainstorm', 'Technical support follow-up', 'Partnership sync', 'Contract negotiation'];
+        const descriptions = ['Product demo', 'Onboarding session', 'Business review', 'Feature brainstorm', 'Design Call', 'Partnership sync', 'Sales Call'];
         const languages = [['en'], ['en', 'es'], ['fr', 'en'], ['de']];
-        
+
         const callSessions = Array.from({ length: limit }).map((_, i) => {
           const startSeconds = Math.floor(Math.random() * 100000);
           const durationSeconds = Math.floor(Math.random() * 3300) + 300;
           const startedAt = generateRandomDate(i * 2 + 1, i * 2 + 3);
           const endedAt = new Date(new Date(startedAt).getTime() + durationSeconds * 1000).toISOString();
-          
+
           return {
             _id: `cs_u2_${i}_${startSeconds}`,
             user_id: 'u2',
@@ -160,7 +160,7 @@ const getLocalMockData = (endpoint, userId = 'u1', params = {}) => {
             updatedAt: endedAt
           };
         });
-        
+
         return {
           callSessions,
           pagination: {
@@ -173,7 +173,7 @@ const getLocalMockData = (endpoint, userId = 'u1', params = {}) => {
           }
         };
       }
-      
+
       default:
         return null;
     }

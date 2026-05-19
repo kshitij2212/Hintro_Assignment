@@ -58,12 +58,10 @@ const FeedbackHistory = () => {
       <div className="main-content" style={{ minWidth: 0 }}>
         
         <header className="mobile-header">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <button onClick={() => setMobileSidebarOpen(true)} aria-label="Open sidebar">
-              <Menu size={24} />
-            </button>
-            <span className="sidebar-logo">Hintro</span>
-          </div>
+          <button onClick={() => setMobileSidebarOpen(true)} aria-label="Open sidebar" className="mobile-menu-btn">
+            <Menu size={24} />
+          </button>
+          <span className="mobile-header-title">Feedback History</span>
           <div
             className="top-bar-avatar"
             style={{ width: '28px', height: '28px', fontSize: '10px', cursor: 'pointer' }}

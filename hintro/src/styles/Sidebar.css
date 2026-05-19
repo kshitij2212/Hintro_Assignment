@@ -119,6 +119,26 @@
   z-index: 90;
 }
 
+.mobile-menu-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+}
+
+.mobile-header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
 @media (max-width: 1024px) {
   .mobile-header {
     display: flex;
