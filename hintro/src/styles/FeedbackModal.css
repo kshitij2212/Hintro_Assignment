@@ -1,0 +1,206 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(var(--text-main-rgb, 15, 23, 42), 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.feedback-modal {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--text-muted);
+  border-radius: 50%;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.feedback-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.feedback-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.feedback-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.star-rating-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.star-btn {
+  color: var(--border-focus);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.star-btn:hover {
+  transform: scale(1.15);
+}
+
+.star-btn.filled {
+  color: var(--star-color); 
+}
+
+
+.feedback-branch-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeIn 0.25s ease-out forwards;
+  margin-bottom: 24px;
+}
+
+.branch-prompt {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.feedback-pill {
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: var(--bg-main);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  transition: all var(--transition-fast);
+}
+
+.feedback-pill:hover {
+  background-color: var(--border);
+}
+
+.feedback-pill.selected {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.comment-textarea {
+  width: 100%;
+  height: 90px;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-md);
+  outline: none;
+  resize: none;
+  background-color: var(--bg-main);
+  transition: all var(--transition-fast);
+}
+
+.comment-textarea:focus {
+  border-color: var(--primary);
+  background-color: var(--bg-card);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.feedback-submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background-color: var(--primary);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 4px 10px var(--primary-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.feedback-submit-btn:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 6px 14px var(--primary-glow);
+}
+
+.feedback-submit-btn:disabled {
+  background-color: var(--border);
+  color: var(--text-muted);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+
+.success-animation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.checkmark-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--success-light);
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  animation: pulse-glow 1.5s infinite;
+}
+
+.success-message {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.success-submessage {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: center;
+}
