@@ -14,7 +14,29 @@ export const AuthProvider = ({ children }) => {
   const [serverOnline, setServerOnline] = useState(false);
   const [feedbackList, setFeedbackList] = useState(() => {
     const stored = localStorage.getItem('hintro_feedback');
-    return stored ? JSON.parse(stored) : [];
+    if (stored) return JSON.parse(stored);
+
+    const initialData = [
+      {
+        id: 'fb_mock_1',
+        userId: 'u2',
+        rating: 2,
+        feedbackType: 'areas_for_improvement',
+        comment: 'Had issues with ...',
+        createdAt: '2026-05-10T11:30:00.000Z'
+      },
+      {
+        id: 'fb_mock_2',
+        userId: 'u2',
+        rating: 4,
+        feedbackType: 'successes',
+        comment: 'The boxy feature ...',
+        createdAt: '2026-05-18T13:25:00.000Z'
+      }
+    ];
+
+    localStorage.setItem('hintro_feedback', JSON.stringify(initialData));
+    return initialData;
   });
 
   useEffect(() => {
